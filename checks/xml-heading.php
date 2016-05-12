@@ -12,7 +12,7 @@ while ( $line = fgets( $xml_file ) ) {
 }
 
 if ( 'passed' != $status ) {
-	array_push( $errors, 'ERROR: XML Tag Not Found' );
+	array_push( $errors, 'ERROR: Expected opening XML Tag on line 1, none found' );
 }
 
 fclose( $xml_file );
