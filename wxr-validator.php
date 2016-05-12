@@ -13,7 +13,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 $errors = array();
 
+$xml_file = fopen( 'test.xml', 'r' ) or array_push( $errors, 'Could not find XML file.' );
+
 include 'checks/xml-heading.php';
+
+fclose( $xml_file );
 
 if ( empty( $errors ) ) {
 	echo 'You are all set! No errors found.';
