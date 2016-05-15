@@ -12,5 +12,6 @@ If all the tests pass, you should see a message to that effect.  If some of the 
 #Completed Checks
   - Check for XML tag at top of file
 
-#TO-DO checks
+#TO-DO
   - Check for unopened/unclosed tags
+  - XML filename as a command line argument
