@@ -13,7 +13,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 $errors = array();
 
-if( isset($argv[1]) ) {
+if ( isset( $argv[1] ) ) {
 	$filename = $argv[1];
 }
 else {
@@ -21,13 +21,11 @@ else {
 	die();
 }
 
-
-
-
-
 $xml_file = fopen( $filename, 'r' ) or array_push( $errors, 'Could not find XML file.' );
 
-include 'checks/xml-heading.php';
+foreach ( glob( 'checks/*.php' ) as $checkname ) {
+	include $checkname;
+}
 
 fclose( $xml_file );
 
