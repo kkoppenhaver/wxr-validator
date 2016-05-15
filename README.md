@@ -8,3 +8,9 @@ Currently this script runs on test.xml.  In the future, this file will be able t
   - php wxr-validator.php
 
 If all the tests pass, you should see a message to that effect.  If some of the tests fail, there will be output letting you know which tests failed.
+
+#Completed Checks
+  - Check for XML tag at top of file
+
+#TO-DO checks
+  - Check for unopened/unclosed tags
