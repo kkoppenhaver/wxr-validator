@@ -16,7 +16,24 @@ while ( $line = fgets( $xml_file ) ) {
 	foreach ( $line_tags_wrapped as $line_tags ) {
 
 		foreach ( $line_tags as $tag ) {
+
 			array_push( $tags, array( $tag, $line_num ) );
+
 		}
 	}
 }
+
+// Loop through the tags array
+foreach ( $tags as $key => $value ) {
+
+	// If it's a opening tag, look for the closing tag
+	if ( ! preg_match( '/<\//', $value[0] ) ) {
+		$closing_tag = str_replace( '<', '</', $value[0] );
+
+		if ( $closing_tag == $tags[ $key + 1 ][0] ) {
+			unset( $tags[ $key + 1 ] );
+			unset( $tags[ $key ] );
+		}
+	}
+}
+var_dump( $tags );
