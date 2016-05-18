@@ -25,6 +25,9 @@ $xml_file = fopen( $filename, 'r' ) or array_push( $errors, 'Could not find XML 
 
 foreach ( glob( 'checks/*.php' ) as $checkname ) {
 	include $checkname;
+
+	// Rewind the file pointer so each check starts at the beginning of the XML file
+	rewind( $xml_file );
 }
 
 fclose( $xml_file );

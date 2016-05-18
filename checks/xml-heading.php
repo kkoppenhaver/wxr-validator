@@ -4,7 +4,7 @@ $status = 'not_passed';
 
 while ( $line = fgets( $xml_file ) ) {
 	preg_match( '<\?xml version=".*?" encoding=".*?"\?>', $line, $matches );
-	if ( count( $matches ) > 0 ) {
+  if ( count( $matches ) > 0 ) {
 		$status = 'passed';
 		break;
 	}
